@@ -35,6 +35,9 @@ mongoose.connect(process.env.DATABASE_URL || "mongodb+srv://aadesh:aadesh@dbconn
 })
 app.use(express.json({ limit: '10mb' }))
 app.use(cors())
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.static('./uploads/'))
 app.use(express.urlencoded({ limit: '10mb', extended: true }))
 
